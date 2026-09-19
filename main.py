@@ -1,11 +1,17 @@
-print("Welcome to my console calculator!/n")
+print("Welcome to my console calculator!\n")
 
-a = float(input("Enter A: "))
-b = float(input("Enter B: "))
+def read_numbers(number):
+    while True:
+        try:
+            return float(input(number))
+        except ValueError:
+            print("Please enter a number!")
+a = read_numbers("Enter A: ")
+b = read_numbers("Enter B: ")
 
-print("Choice operations: + , - , * , /")
+print("Choice operations: [ + ][ - ][ * ][ / ]")
+
 choice = (input("Enter your choice: "))
-
 if "+" in choice:
     print("Result: ", a+b)
 elif "-" in choice:
